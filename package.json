@@ -1,6 +1,6 @@
 {
     "name": "socialsignals",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "license": "MIT",
     "description": "Enables easy access to the social media data for specific URLs from Facebook, Twitter and Google+",
     "dependencies": {
@@ -8,6 +8,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/socialsignals/socialsignals.git"
+        "url": "https://github.com/socialsignals"
     }
 }
