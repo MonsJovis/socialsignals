@@ -1,6 +1,6 @@
 {
   "name": "socialsignals",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "description": "Enables easy access to the social media data for specific URLs from Facebook, Twitter and Google+",
   "dependencies": {
