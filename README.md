@@ -1,5 +1,7 @@
 # Social Signals
 
+[![NPM](https://nodei.co/npm/socialsignals.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/socialsignals/)
+
 This module enables easy access to the social media metrics publicly provided by
 
 * Facebook
@@ -100,7 +102,7 @@ Fetches the Google+ data for `url`.
 }
 ```
 
-## Examples
+## Example
 
 ```javascript
 var social = require('socialsignals')
@@ -109,3 +111,7 @@ social.googleplus('https://github.com/', function(err, signals){
 	console.log(signals)
 })
 ```
+
+## License
+
+created by [Justus Blümer](http://www.justusbluemer.de), [MIT](https://spdx.org/licenses/MIT.html)
