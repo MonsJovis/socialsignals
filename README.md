@@ -115,4 +115,5 @@ social.googleplus('https://github.com/', function(err, signals){
 ## License
 
 Created by [Justus Blümer](http://www.justusbluemer.de)
+
 License: [MIT](https://spdx.org/licenses/MIT.html)
