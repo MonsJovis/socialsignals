@@ -1,10 +1,18 @@
 {
-    "name": "socialsignals",
-    "version": "1.0.7",
-    "license": "MIT",
-    "description": "Enables easy access to the social media data for specific URLs from Facebook, Twitter and Google+",
-    "dependencies": {
-        "request": "^2.60.0"
-    },
-    "repository": "justusbluemer/socialsignals"
+  "name": "socialsignals",
+  "version": "1.0.8",
+  "license": "MIT",
+  "description": "Enables easy access to the social media data for specific URLs from Facebook, Twitter and Google+",
+  "dependencies": {
+    "assert": "^1.3.0",
+    "mocha": "^2.2.5",
+    "request": "^2.60.0",
+    "should": "^7.0.4",
+    "supertest": "^1.0.1",
+    "winston": "^1.0.1"
+  },
+  "repository": "justusbluemer/socialsignals",
+  "scripts": {
+    "test": "mocha"
+  }
 }

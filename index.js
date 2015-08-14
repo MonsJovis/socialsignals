@@ -4,36 +4,32 @@ module.exports = {
 
 	facebook: function(url, cb) {
 		request({
-			url: 'https://api.facebook.com/method/fql.query?&format=json&query=select%20total_count,like_count,comment_count,share_count,click_count%20from%20link_stat%20where%20url="' + encodeURIComponent(url) + '"'
+			url: 'https://api.facebook.com/method/fql.query?&format=json&query=select%20total_count,like_count,comment_count,share_count,click_count%20from%20link_stat%20where%20url="' + encodeURIComponent(url) + '"',
+			json: true
 		}, function(err, res, body){
 			if (!err) {
-				try {
-					var json = JSON.parse(body)
-					cb(null, json[0])
+				if (typeof(body[0]) === 'object') {
+					cb(null, body[0])
 				}
-				catch(ex) {
-					cb(ex)
-				}
+				else return cb('Could not parse facebook response')
 			}
-			else cb(err)
+			else return cb(err)
 		})
 	},
 
 	twitter: function(url, cb) {
 		request({
-			url: 'http://urls.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(url)
+			url: 'http://urls.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(url),
+			json: true
 		}, function(err, res, body){
 			if (!err) {
-				try {
-					var json = JSON.parse(body)
-					delete json.url
-					cb(null, json)
+				if (typeof(body.url) === 'string') {
+					delete body.url
+					cb(null, body)
 				}
-				catch(ex) {
-					cb(ex)
-				}
+				else return cb('Could not parse twitter response')
 			}
-			else cb(err)
+			else return cb(err)
 		})
 	},
 
@@ -56,12 +52,10 @@ module.exports = {
 			},
 		}, function(err, res, body){
 			if (!err) {
-				try {
+				if (typeof(body.result.metadata.globalCounts) === 'object') {
 					cb(null, body.result.metadata.globalCounts)
 				}
-				catch(ex) {
-					cb(ex)
-				}
+				else return cb('Could not parse google+ response')
 			}
 			else cb(err)
 		})
