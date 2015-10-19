@@ -52,7 +52,7 @@ module.exports = {
 			},
 		}, function(err, res, body){
 			if (!err) {
-				if (typeof(body.result.metadata.globalCounts) === 'object') {
+				if (typeof(body.result) === 'object' && typeof(body.result.metadata) === 'object' && typeof(body.result.metadata.globalCounts) === 'object') {
 					cb(null, body.result.metadata.globalCounts)
 				}
 				else return cb('Could not parse google+ response')
